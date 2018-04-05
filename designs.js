@@ -27,8 +27,12 @@ function makeGrid(evt) {
       $(this).append('<td></td>');
     }
     // Selecting each cell and filling it with color
+    $('td').on('click', function(evt) {
+     selectedColor = $('#colorPicker').val();
+     $(evt.target).css('background', selectedColor);
+   });
   });
-}
+ }
 
 // When size is submitted by the user, call makeGrid()
 $(submitButton).on('click', makeGrid);
