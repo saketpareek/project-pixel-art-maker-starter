@@ -17,6 +17,12 @@ function makeGrid(evt) {
   // Setting n and m variable to height and width
   n = $('#inputHeight').val();
   m = $('#inputWeight').val();
+  // Alert window
+  if ((n < 1 || n > 100) || (m < 1 || m > 100)) {
+    alert('Please enter a value between 1-100.');
+    window.location.reload();
+    return false;
+  }
   // for loop to create rows to the number of n
   for (let i = 1; i <= n; i++) {
     $('#pixelCanvas').append('<tr></tr>');
